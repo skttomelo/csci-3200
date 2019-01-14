@@ -1,0 +1,24 @@
+package problem2;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter a number to find out how many 1's are in it's binary representation.\n");
+//		numOfOnes(input.nextInt());
+		System.out.println(14%2);
+	}
+	
+	private static int numOfOnes(int N){
+		int C = 0;
+		int result;
+		if(N == 0){
+			return result;
+		}if(N%2 != 0){
+			C++;
+		}
+		result = numOfOnes(N/2);
+		return C;
+	}
+}

@@ -1,0 +1,19 @@
+package problem2;
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter a number to find out how many 1's are in it's binary representation.");
+		numOfOnes(input.nextInt());
+	}
+	
+	private static int numOfOnes(int N){
+		
+		if((N == 0){
+			return result;
+		}
+		return C;
+	}
+}

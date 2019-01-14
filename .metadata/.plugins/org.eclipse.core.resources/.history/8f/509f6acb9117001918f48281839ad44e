@@ -1,0 +1,32 @@
+package assignment.driver;
+
+import java.util.Random;
+
+public class Main {
+	public static void main(String[] args){
+		int[] randomnum = new int[10];
+		Random random = new Random();
+		for(int i = 0; i<10; i++){
+			randomnum[i] = random.nextInt();
+		}
+		long start = System.nanoTime();
+		sorter(randomnum);
+	}
+	
+	private static void sorter(int[] array){
+		int currentMax = array[0], arrayMaxPos = 0;
+		for(int iterations = 1; iterations<array.length; iterations++){
+			for(int i = arrayMaxPos+1; i<array.length; i++){
+				if(currentMax <= array[i]){
+					currentMax = array[i];
+					arrayMaxPos = i;
+					break;
+				}else if(currentMax > array[iterations]){
+					array[arrayMaxPos] = array[iterations]; //makes lower number take the place of bigger number
+					array[iterations] = currentMax; //bigger number takes the place of the lower number essentially switching the two positions
+					arrayMaxPos = iterations; //sets the new max position
+				}
+			}
+		}
+	}
+}
