@@ -1,0 +1,11 @@
+package problem3;
+
+import java.util.Comparator;
+
+public class PerimeterComparator implements Comparator<Rectangle>{
+
+	@Override
+	public int compare(Rectangle arg0, Rectangle arg1) {
+		return 0;
+	}
+}

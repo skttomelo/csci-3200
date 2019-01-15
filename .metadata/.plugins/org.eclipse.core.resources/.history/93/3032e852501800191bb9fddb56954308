@@ -1,0 +1,38 @@
+package problem3;
+
+public class Rectangle implements Comparable<Rectangle> {
+	int width, height;
+	
+	
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getArea() {
+		return width*height;
+	}
+
+	public int getPerimeter() {
+		return (2*width)+(2*height);
+	}
+
+
+	@Override
+	public int compareTo(Rectangle arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}
