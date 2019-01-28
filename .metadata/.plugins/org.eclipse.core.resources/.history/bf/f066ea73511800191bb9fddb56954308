@@ -1,9 +1,0 @@
-package problem3;
-
-import java.util.Comparator;
-
-public class PerimeterComparator implements Comparator<Rectangle>{
-	public int compare(){
-		return 0;
-	}
-}
