@@ -73,7 +73,7 @@ public class Driver {
 	}
 	
 	public static void main(String[] args){
-		for(int = 25; i<201; i+=25){
+		for(){
 			
 		}
 	}
