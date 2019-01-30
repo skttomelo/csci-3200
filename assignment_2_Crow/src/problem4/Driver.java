@@ -50,17 +50,17 @@ public class Driver {
 		return sum; //+1
 	}
 	
-	//formula: 1+2+1+(6N)(6N) = 4+36N^2, O(N^2)
+	//formula: 1+2+1+36N^3 = 4+36N^3, O(N^3)
 	public static int summationThree(int n){
 		int opCount = 0;
 		int sum = 0; //+1
 		opCount++;
 		//+2 for i=0 and condition prior to entering loop
 		opCount+=2;
-		for(int i = 0; i<n; i++){ //3N+3N = 6N
+		for(int i = 0; i<n; i++){ //(3N+3N)6N^2 = 36N^3
 			//3N for j=0 and condition prior to entering loop and multiplication
 			opCount+=3;
-			for(int j = 0; j<(n*n); j++){ //4N+2N = 6N
+			for(int j = 0; j<(n*n); j++){ //(4N+2N)N = 6N^2 //we multiply by N because of the n*n
 				sum++; //2N for assignment and addition
 				opCount+=2;
 				//2N for j assignment and addition
@@ -142,7 +142,7 @@ public class Driver {
 		return sum; //+1
 	}
 	
-	//formula: 240N^3+5, O(N^3)
+	//formula: 78N^2+5, O(N^2)
 	public static int summationSix(int n){
 		int opCount = 0;
 		int sum = 0; //+1
@@ -151,10 +151,10 @@ public class Driver {
 		opCount++;
 		//+2 for i=0 and condition prior to entering loop
 		opCount+=2;
-		for(int i = 1; j<n; i++){ //6N(40^2) = 240N^3
+		for(int i = 1; j<n; i++){ //6N(13N) = 78N^2
 			//3N for k=0 and condition prior to entering the loop and also multiplication
 			opCount+=3;
-			for(j = 1; j<i*i; j++){ //8N(5N) = 40N^2
+			for(j = 1; j<i*i; j++){ //8N + 5N = 13N
 				//2N for condition and mod
 				opCount+=2;
 				if(j%i == 0){
@@ -187,11 +187,11 @@ public class Driver {
 	
 	public static void main(String[] args){
 		for(int i = 25; i<201; i+=25){
-//			System.out.println(summationOne(i));
-//			System.out.println(summationTwo(i));
-//			System.out.println(summationThree(i));
-//			System.out.println(summationFour(i));
-//			System.out.println(summationFive(i));
+			System.out.println(summationOne(i));
+			System.out.println(summationTwo(i));
+			System.out.println(summationThree(i));
+			System.out.println(summationFour(i));
+			System.out.println(summationFive(i));
 			System.out.println(summationSix(i));
 		}
 	}
