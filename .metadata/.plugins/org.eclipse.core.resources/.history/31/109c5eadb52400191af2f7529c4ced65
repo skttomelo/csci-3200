@@ -106,20 +106,20 @@ public class Driver {
 		return sum; //+1
 	}
 	
-	//formula: 180N^5+4, O(N^5)
+	//formula: 180N^3+4, O(N^3)
 	public static Long summationFive(int n){
 		long opCount = 0;
 		long sum = 0; //+1
 		opCount++;
 		//+2 for i=0 and condition prior to entering loop
 		opCount+=2;
-		for(long i = 0; i<n; i++){ //(3N+3N)30N^4 = 180N^5
+		for(long i = 0; i<n; i++){ //(3N+3N)30N^2 = 180N^3
 			//3N for j=0 and condition prior to entering the loop and also multiplication
 			opCount+=3;
-			for(long j = 0; j<i*i; j++){ //6N^2(5N^2) = 30N^4 because i*i squares the amount of operations
+			for(long j = 0; j<i*i; j++){ //6N(5N) = 30N^2
 				//2N for k=0 and condition prior to entering the loop
 				opCount+=2;
-				for(long k = 0; k<j;k++){ //N(2N+2N+1N) it's multiplied by N because of i*i from earlier making this 5N^2 
+				for(long k = 0; k<j;k++){ //2N+2N+1N = 5N
 					sum++; //2N for assignment and addition
 					opCount+=2;
 					//2N for k assignment and addition
