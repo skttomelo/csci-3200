@@ -1,0 +1,36 @@
+package problem5;
+
+public class MyQueue<E> {
+	private Node start;
+	private int currentCount;
+	public MyQueue(){
+		start = null;
+		currentCount = 0;
+	}
+	
+	public void printList(){
+		Node current = start;
+		while(current != null){
+			System.out.println(current.value);
+			current = current.next;
+		}
+	}
+	
+	public void makeEmpty(){}
+	public void find(E val){}
+	public E get(int index){return null;}
+	public void insert(E val, int index){}
+	public void remove(E val){}
+	public void delete
+	
+	private class Node
+	{
+		E value;
+		Node next;
+		public Node(E v)
+		{
+			value = v;
+			next = null;//no node after this one
+		}
+	}
+}

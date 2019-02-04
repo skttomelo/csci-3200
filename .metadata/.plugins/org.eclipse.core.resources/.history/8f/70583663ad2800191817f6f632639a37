@@ -1,0 +1,7 @@
+package problem5;
+
+public class MyQueueTester {
+	public static void main(String[] args){
+		MyQueue queue = new MyQueue<Integer>();
+	}
+}

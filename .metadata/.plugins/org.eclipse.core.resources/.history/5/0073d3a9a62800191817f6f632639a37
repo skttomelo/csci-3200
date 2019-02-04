@@ -18,5 +18,6 @@ public class Driver {
 			People.pass(amount1);
 		}
 		System.out.println("Player "+People.get(0)+" wins!");
+//		System.out.println("player 1 wins");
 	}
 }
