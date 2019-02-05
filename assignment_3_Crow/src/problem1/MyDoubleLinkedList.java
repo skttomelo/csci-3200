@@ -155,7 +155,7 @@ public class MyDoubleLinkedList<E> {
 	}
 	
 	public void swap(int index){
-		if(index < currentCount){
+		if(index >= 0 && index < currentCount){
 			if(index != currentCount-1){
 				Node current = start;
 				if(index == 0){

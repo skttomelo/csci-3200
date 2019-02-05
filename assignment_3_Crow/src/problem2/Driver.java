@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Driver {
 	public static void main(String[] args){
-		MySingleLinkedList<Integer> People = new MySingleLinkedList<Integer>();
+		CircularLinkedList<Integer> People = new CircularLinkedList<Integer>();
 		Scanner scan = new Scanner(System.in);
 		int amount, amount1; //will be used to determine the amount of people playing, and the amount of passes that will be done each round
 		System.out.println("How many people are playing?");

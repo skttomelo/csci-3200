@@ -126,7 +126,7 @@ public class MySingleLinkedList<E> {
 //			delete(index);
 //			insert(current, index+1);
 //		}
-		if(index < currentCount){
+		if(index >= 0 && index < currentCount){
 			if(index != currentCount-1){
 				Node current = start;
 				if(index == 0){
