@@ -11,7 +11,7 @@ public class MySingleLinkedListTester {
 		msll.add(4);
 //		msll.insert(5, 4);
 		msll.delete(0);
-		msll.swap(0);
+		msll.swap(1);
 		msll.printList();
 		//System.out.println(msll.get(0));//0 steps of for
 		//System.out.println(msll.get(3));//3 steps of for

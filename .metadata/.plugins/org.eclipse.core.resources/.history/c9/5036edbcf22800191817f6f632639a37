@@ -134,7 +134,7 @@ public class MySingleLinkedList<E> {
 					start.next = start.next.next;
 					current.next = start;
 					start = current;
-				}else{ // did this part before the index == 0 part so it looks differently
+				}else{
 					for(int i = 1; i<index;i++){ //goes up to the node prior to the target
 						current = current.next;
 					}

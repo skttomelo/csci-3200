@@ -121,7 +121,7 @@ public class MySingleLinkedList<E> {
 	
 	//problem 1
 	public void swap(int index){
-//		if(index >= 0 && index < currentCount){ // doesn't reach requirements of problem
+//		if(index >= 0 && index < currentCount){
 //			E current = get(index);
 //			delete(index);
 //			insert(current, index+1);
@@ -130,11 +130,12 @@ public class MySingleLinkedList<E> {
 			if(index != currentCount-1){
 				Node current = start;
 				if(index == 0){
-					current = start.next;
-					start.next = start.next.next;
+					Node temp = current.next.next;
 					current.next = start;
+					current = start.next;
+					start.next = temp;
 					start = current;
-				}else{ // did this part before the index == 0 part so it looks differently
+				}else{
 					for(int i = 1; i<index;i++){ //goes up to the node prior to the target
 						current = current.next;
 					}
