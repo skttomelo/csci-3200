@@ -1,0 +1,220 @@
+package problem1;
+
+public class MySingleLinkedList<E> {
+	private Node start;
+	private int currentCount;
+	public MySingleLinkedList()
+	{
+		start = null;
+		currentCount = 0;
+	}
+	public void printList()
+	{
+		Node current = start;
+		while(current != null)
+		{
+			System.out.println(current.value);
+			current = current.next;
+		}
+	}
+	public void add(E val)//O(N)
+	{
+		Node newItem = new Node(val);
+
+		//if list is empty
+		if(start == null)
+		{
+			start = newItem;
+			currentCount++;
+		}
+		//if list has items
+		else
+		{
+			Node current = start;//start at first item in list
+			while(current.next != null)//move through list to last item
+			{
+				current = current.next;
+			}
+			//when while ends, current = last item in list
+			current.next = newItem;
+			currentCount++;
+		}
+	}
+	public void insert(E val, int index)
+	{
+		if(index < 0)
+		{
+			index = 0;
+		}
+		if(index >= currentCount)//insert at end is same as add
+		{
+			this.add(val);
+		}
+		else
+		{
+			Node newItem = new Node(val);
+			if(index == 0)//special case, changing start variable
+			{
+				newItem.next = start;//current list comes after new item
+				start = newItem;//new item is first in list
+			}
+			else
+			{
+				Node current = start;
+				for(int i = 1; i < index; i++)
+				{
+					current = current.next;
+				}
+				//System.out.println(current.value);
+
+				//current == before at this point
+				//before -> index -> after
+				//1 -> 2 -> 3
+				//goal
+				//before -> new -> index -> after
+				//1 -> new -> 2 -> 3
+				newItem.next = current.next;//new -> index
+				current.next = newItem;//before -> new
+			}
+			currentCount++;
+		}
+	}
+	public void delete(int index)
+	{
+		if(index >= 0 && index < currentCount)
+		{
+			if(index==0)//deal with special case
+			{
+				start = start.next;
+			}
+			else
+			{
+				Node current = start;
+				for(int i = 1; i < index; i++)//find item before the one being deleted
+				{
+					current = current.next;
+				}
+				current.next = current.next.next;
+				//current -> deleteMe -> restoflist
+				//current -> restoflist
+			}
+			currentCount--;
+		}
+	}
+	public E get(int index)//O(N)
+	{
+		if(index >= 0 && index < currentCount)
+		{
+			Node current = start;
+			for(int i = 0; i < index; i++)
+			{
+				current = current.next;
+			}
+			//current = node at the index
+			return current.value;
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	//problem 1
+	public void swap(int index){
+//		if(index >= 0 && index < currentCount){ // doesn't reach requirements of problem
+//			E current = get(index);
+//			delete(index);
+//			insert(current, index+1);
+//		}
+		if(index >= 0 && index < currentCount){
+			if(index != currentCount-1){
+				Node current = start;
+				if(index == 0){
+					current = start.next;
+					start.next = start.next.next;
+					current.next = start;
+					start = current;
+				}else{ // did this part before the index == 0 part so it looks differently
+					for(int i = 1; i<index;i++){ //goes up to the node prior to the target
+						current = current.next;
+					}
+					Node before = current;
+					Node after = current.next.next;
+					Node end = current.next.next.next;
+					current = current.next;
+					
+					before.next = after;
+					before.next.next = current;
+					current.next = end;
+				}
+			}
+		}
+	}
+	
+	public void swap1(int index) {
+		// If the index = 0, then swap 0 and 1, if 10 is given, swap 10 and 11.
+		if(index >= 0 && index < currentCount-1)
+		{
+			Node current = start;
+			for(int i = 0; i < index; i++) // current will traverse all the way up to index needed for the swap
+			{
+				current = current.next;
+			}
+		
+			if(currentCount == index) {
+				return;
+			}
+			
+			else if(index == 0) {
+	            Node var1 = current.next;
+	            Node var2 = current.next.next;
+              
+              	current.next = var2;
+              	start = var1;
+              	start.next = current;
+	        }
+			
+// 			else if((currentCount - 1) == (index)) { // ignore this. it doesn't work.
+// 				Node var1 = current.next;
+				
+// 			}
+			// else if((currentCount > 1) && (index < currentCount)) {
+			else{
+				Node var1 = start;				// (1)  2   3   4
+              	
+              for(int i = 0; i < index-1; i++) // current will traverse all the way up to one before the index needed for the swap
+				{
+					var1 = var1.next;
+				}
+              
+	            Node var2 = var1.next;			//  1  (2)  3   4
+	            Node var3 = var1.next.next;		//  1   2  (3)  4 // this is getting swapped with var2
+	            Node var4 = var1.next.next.next;	//  1   2   3  (4) // this is getting attached to var2
+	            
+	            var2 = var4;
+   	            var1.next = var3;
+	            var3.next = var2;
+
+				
+				/*
+				Node var1 = current.next.next.next;
+				current.next.next.next = current.next;
+				Node var2 = current.next.next;
+				current.next.next = var1;
+				current.next = var2;
+				*/
+			}
+		}
+	}
+
+	private class Node
+	{
+		E value;
+		Node next;
+		public Node(E v)
+		{
+			value = v;
+			next = null;//no node after this one
+		}
+	}
+}

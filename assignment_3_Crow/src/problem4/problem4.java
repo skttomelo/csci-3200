@@ -3,7 +3,7 @@ package problem4;
 import java.util.List;
 
 public class problem4 {
-	//array list formula: 4+((N^2)/2)+2N; O((N^2)/2)
+	//array list formula: 4+((N^2)/2)+3N; O((N^2)/2)
 	//linked list formula: 4+(3N/2)+C; O(N/2)
 	public static void removeFirstHalf(List<?> lst){
 		int theSize = lst.size( ) / 2; //2 units

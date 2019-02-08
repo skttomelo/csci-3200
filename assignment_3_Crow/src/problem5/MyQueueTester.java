@@ -11,8 +11,9 @@ public class MyQueueTester {
 		queue.enqueue(8);
 		System.out.println(queue.peek()); // outputs 1
 		queue.dequeue(); // removes 1
-		System.out.println(queue.peek()+"\n-----------"); // outputs 5
-		
+		System.out.println(queue.peek()); // outputs 5
+		queue.dequeue(); // remove 5
+		System.out.println(queue.top()+"\n-----------"); // outputs 4
 		queue.printStack();
 	}
 }

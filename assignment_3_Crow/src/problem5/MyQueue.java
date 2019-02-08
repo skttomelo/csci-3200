@@ -46,6 +46,14 @@ public class MyQueue<E> {
 			return val;
 		}
 	}
+	public E top(){ //O(1)
+		if(start == null){ //empty stack
+			return null;
+		}else{
+			E val = start.value;
+			return val;
+		}
+	}
 	public int size(){ //O(1)
 		return currentCount;
 	}
