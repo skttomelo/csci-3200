@@ -1,7 +1,0 @@
-package problem2;
-
-public class Driver {
-	public static void main(String[] args){
-		MySingleLinkedList<Integer> People = new MySingleLinkedList<Integer>();
-	}
-}
