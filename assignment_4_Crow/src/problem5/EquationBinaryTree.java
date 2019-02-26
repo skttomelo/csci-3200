@@ -106,10 +106,10 @@ public class EquationBinaryTree {
 		Node n = new Node(""+temp.charAt(mid));
 		//first half
 		n.left = populateFromInfixHelper(temp.substring(0, mid));
-		//System.out.println(temp.substring(0, mid));
+//		System.out.println(temp.substring(0, mid));
 		//second half
 		n.right = populateFromInfixHelper(temp.substring(mid+1));
-		//System.out.println(temp.substring(mid+1));
+//		System.out.println(temp.substring(mid+1));
 
 		return n;
 	}
@@ -124,8 +124,24 @@ public class EquationBinaryTree {
 		if(equation.length() == 1) {
 			return new Node(equation);
 		}
+		MyStack<Node> stack = new MyStack<Node>();
+		Node current;
 		
-		return n;
+		for(int i = 0; i<equation.length(); i++) {
+			current = new Node(""+equation.charAt(i));
+			if(equation.charAt(i) != '+' && equation.charAt(i) != '-' && equation.charAt(i) != '*' && equation.charAt(i) != '/' && equation.charAt(i) != '^') {
+				stack.push(current);
+			}else {
+				current.right = stack.pop();
+				current.left = stack.pop();
+				
+				stack.push(current);
+			}
+		}
+		
+		current = stack.pop();
+		
+		return current;
 	}
 	//+ab = (a+b)
 	public void populateFromPrefix(String equation)
@@ -133,7 +149,17 @@ public class EquationBinaryTree {
 		//complete this section for #5 from Assignment 4
 		//does not require recursion to solve
 		
-		root = null;
+		root = populateFromPrefixHelper(equation);
+	}
+	private Node populateFromPrefixHelper(String equation) {
+		if(equation.length() == 1) {
+			return new Node(equation);
+		}
+		
+		for(int i = 0; i<equation.length(); i++) {
+			
+		}
+		return null;
 	}
 
 	private class Node
