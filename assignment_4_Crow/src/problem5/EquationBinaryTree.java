@@ -138,11 +138,28 @@ public class EquationBinaryTree {
 		root = populateFromPrefixHelper(equation);
 	}
 
-	private Node populateFromPrefixHelper(String equation) {
+	private Node populateFromPrefixHelper(String equation) { // does not work
 		if (equation.length() == 1) {
-			root = new Node(equation);
+			return new Node(equation);
 		}
-		return null;
+		MyStack<Node> stack = new MyStack<Node>();
+		Node current;
+
+		for (int i = 0; i < equation.length(); i++) {
+			current = new Node("" + equation.charAt(i));
+			if (equation.charAt(i) != '+' && equation.charAt(i) != '-' && equation.charAt(i) != '*' && equation.charAt(i) != '/' && equation.charAt(i) != '^') {
+				stack.push(current);
+			} else {
+				current.right = stack.pop();
+				current.left = stack.pop();
+
+				stack.push(current);
+			}
+		}
+
+		current = stack.pop();
+
+		return current;
 	}
 
 	private class Node {
