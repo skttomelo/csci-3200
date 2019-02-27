@@ -138,20 +138,21 @@ public class EquationBinaryTree {
 		root = populateFromPrefixHelper(equation);
 	}
 
-	private Node populateFromPrefixHelper(String equation) { // does not work
+	private Node populateFromPrefixHelper(String equation) { // O(N)
 		if (equation.length() == 1) {
 			return new Node(equation);
 		}
-		MyStack<Node> stack = new MyStack<Node>();
+		MyStack<Node> stack = new MyStack<Node>(); // O(1)
 		Node current;
 
-		for (int i = 0; i < equation.length(); i++) {
+		for (int i = equation.length()-1; i >= 0; i--) { // O(N) which is the length of the equation
+			//simply by reversing what we do in comparison to postfix, we do everything as if it was a postfix problem in reverse
 			current = new Node("" + equation.charAt(i));
 			if (equation.charAt(i) != '+' && equation.charAt(i) != '-' && equation.charAt(i) != '*' && equation.charAt(i) != '/' && equation.charAt(i) != '^') {
 				stack.push(current);
 			} else {
-				current.right = stack.pop();
 				current.left = stack.pop();
+				current.right = stack.pop();
 
 				stack.push(current);
 			}
