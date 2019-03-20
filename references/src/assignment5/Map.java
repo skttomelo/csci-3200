@@ -1,7 +1,7 @@
 package assignment5;
 import java.util.Objects;
 import java.util.Scanner;
-class Map < K, V > {
+class QuadraticProbingHashTable < K, V > {
   private static final int DEFAULT_TABLE_SIZE = 101;
   static final HashEntry << ? ,
   ? > [] EMPTY_TABLE = {};
@@ -15,14 +15,14 @@ class Map < K, V > {
   /**
    *
    */
-  public Map() {
+  public QuadraticProbingHashTable() {
       this(DEFAULT_TABLE_SIZE);
   }
   /**
    *
    * @param capacity
    */
-  public Map(int size) {
+  public QuadraticProbingHashTable(int size) {
       currentSize = 0;
       maxSize = size;
       allocateArray(size);
