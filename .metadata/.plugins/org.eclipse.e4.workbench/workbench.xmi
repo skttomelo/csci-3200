@@ -6,10 +6,10 @@
   <children xsi:type="basic:TrimmedWindow" xmi:id="_wY1kQReMEemVWNPYzsd0Og" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_wuiHcheMEemVWNPYzsd0Og" label="%trimmedwindow.label.eclipseSDK" x="0" y="0" width="1024" height="768">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
-    <persistedState key="workingSets" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workingSets/>"/>
+    <persistedState key="workingSets" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workingSets/>"/>
     <persistedState key="aggregateWorkingSetId" value="Aggregate for window 1547422898480"/>
     <persistedState key="isRestored" value="true"/>
-    <persistedState key="show_in_time" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;show_in_time/>"/>
+    <persistedState key="show_in_time" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;show_in_time/>"/>
     <tags>topLevel</tags>
     <tags>shellMaximized</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_wuiHcheMEemVWNPYzsd0Og" selectedElement="_wuiHcxeMEemVWNPYzsd0Og" horizontal="true">
@@ -453,13 +453,6 @@
       <children xsi:type="menu:ToolBar" xmi:id="_wyCudReMEemVWNPYzsd0Og" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
         <children xsi:type="menu:HandledToolItem" xmi:id="_FVFepE2ZEemjmboMKu-qCg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_waAo8xeMEemVWNPYzsd0Og"/>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_wyCudheMEemVWNPYzsd0Og" elementId="group.editor" toBeRendered="false">
-        <tags>toolbarSeparator</tags>
-        <children xsi:type="menu:ToolBarSeparator" xmi:id="_wyCudxeMEemVWNPYzsd0Og" elementId="group.editor" toBeRendered="false"/>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_wyCueBeMEemVWNPYzsd0Og" elementId="group.help" toBeRendered="false">
-        <tags>toolbarSeparator</tags>
         <children xsi:type="menu:ToolBarSeparator" xmi:id="_wyCueReMEemVWNPYzsd0Og" elementId="group.help" toBeRendered="false"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_wyDVgBeMEemVWNPYzsd0Og" elementId="org.eclipse.ui.workbench.help" visible="false">
