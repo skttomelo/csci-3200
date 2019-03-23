@@ -1,8 +1,0 @@
-INDEX VERSION 1.131+/Users/tomato/Documents/GitHub/csci-3200/.metadata/.plugins/org.eclipse.jdt.core
-3198781426.index
-2366604720.index
-41389847.index
-194770718.index
-1179866645.index
-4154239352.index
-1532389037.index
