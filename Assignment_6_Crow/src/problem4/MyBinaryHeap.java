@@ -153,28 +153,4 @@ public class MyBinaryHeap <E extends Comparable<? super E>> {
 		return 1 << (Integer.toBinaryString(size).length() + 1);
 	}
 	
-	public E deleteMax() {
-		if(currentSize > 0) {
-			E temp = heap[1];
-
-			heap[currentSize] = heap[currentSize];
-			currentSize--;//decrease size
-			percolateDown(1);//move top value down to final position
-
-			return temp;
-		}
-		else {
-			return null;//no items in heap
-		}
-	}
-	public E findMax() {
-		return (currentSize > 0)?heap[currentSize]:null;
-	}
-	public E findKthLargest(int target) {
-		MyBinaryHeap a = this;
-		for(int i = 0; i < target-1; i++) {
-			a.deleteMax();
-		}
-		return (E) a.findMax();
-	}
 }

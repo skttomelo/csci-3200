@@ -1,15 +1,31 @@
 package problem3;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class MyBinaryHeapTester {
 
-
+	public static int findKthSmallest(Integer[] array, int k) {
+		MyBinaryHeap<Integer> mbh = new MyBinaryHeap<>(array);
+		for(int i = 0; i < k-1; i++) {
+			mbh.deleteMin();
+		}
+		System.out.println("The heap looks like this "+mbh.toString()+"\n\nAnd this is what the "+k+"th smallest element is");
+		return mbh.findMin();
+	}
 	
 	public static void main(String[] args) {
-
-		MyBinaryHeap<Integer> mbh2 = new MyBinaryHeap<>(new Integer[]{9,8,7,6,5,4,3,2,1});
-		System.out.println(mbh2);
-		
-		System.out.println(mbh2.findKthSmallest(4));
+		Random r = new Random();
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter what n will be:");
+		int n = in.nextInt();
+		Integer[] ints = new Integer[n];
+		System.out.println("What is the k kth smallest)?");
+		n = in.nextInt();
+		for(int i = 0; i < ints.length; i++) {
+			ints[i] = r.nextInt();
+		}
+		System.out.println(MyBinaryHeapTester.findKthSmallest(ints, n));
 	}
 
 }
