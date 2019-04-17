@@ -13,7 +13,7 @@ public class MyStack<E> {
 		Node current = start;
 		while(current != null)
 		{
-			System.out.println(current.value);
+			System.out.println(current.value+"\n");
 			current = current.next;
 		}
 	}
